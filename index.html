@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Country Finder • দেশ খুঁজুন</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <div class="left">
+          <h1 class="title">দেশ খুঁজুন</h1>
+          <p class="subtitle">
+            দেশের নাম লিখে Search চাপলে বেসিক তথ্য এখানে দেখাবে।
+          </p>
+
+          <div class="controls">
+            <input
+              id="countryInput"
+              type="text"
+              placeholder="উদাহরণ: Bangladesh বা india"
+            />
+            <button id="searchBtn">Search</button>
+          </div>
+
+          <div id="result" class="result">
+            <!-- API result এখানে দেখাবে -->
+            <p class="hint">Result এখানে দেখাবে — প্রথমে দেশ খুঁজুন।</p>
+          </div>
+        </div>
+
+        <aside class="right" id="map">
+          <div class="codeMock">
+            <pre></pre>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="foot">
+        <small>Arafat Nill.</small>
+      </footer>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
