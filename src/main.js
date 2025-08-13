@@ -16,7 +16,7 @@ searchBtn.addEventListener("click", async () => {
             <img src="${Country.flags?.png || Country.flags?.svg}" alt="Flag of ${Country.name.common}">
         </div>
         <div class="info">
-            <h1>দেশের নাম: <em><a  style="color: white; text-decoration : none;" href="${Country.maps.googleMaps}" target="_blank" title="View on Google Maps">${Country.name.common}</a></em></h1>
+            <h1>দেশের নাম: <em><a  style="text-decoration : none;" href="${Country.maps.googleMaps}" target="_blank" title="View on Google Maps">${Country.name.common}</a></em></h1>
             <h4>রাজধানী: ${Country.capital?.[0] || 'N/A'}</h4>
             <h4>মহাদেশ: ${Country.region}</h4>
             <h4>ভাষা: ${Object.values(Country.languages || {}).join(', ')}</h4>
