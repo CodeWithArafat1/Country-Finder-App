@@ -10,19 +10,20 @@ searchBtn.addEventListener("click", async () => {
   try {
     const CountryName = countryInput.value.trim();
     const Country = await fetchCountryData(CountryName);
-
+    console.log(Country);
     result.innerHTML = `
-    <div class="cardRow">
-      <img src="${Country.flags?.png || Country.flags?.svg}">
-      </div>
-
-      <div class="info">
-        <h1>Country Name: <em>${Country.name.common}</em></h1>
-        <h4>Capital: ${Country.capital}</h4>
-        <h4>Population: ${formatCompactNumber(Country.population)}</h4>
-
-      </div>
-  `;
+        <div class="cardRow">
+            <img src="${Country.flags?.png || Country.flags?.svg}" alt="Flag of ${Country.name.common}">
+        </div>
+        <div class="info">
+            <h1>দেশের নাম: <em><a  style="color: white; text-decoration : none;" href="${Country.maps.googleMaps}" target="_blank" title="View on Google Maps">${Country.name.common}</a></em></h1>
+            <h4>রাজধানী: ${Country.capital?.[0] || 'N/A'}</h4>
+            <h4>মহাদেশ: ${Country.region}</h4>
+            <h4>ভাষা: ${Object.values(Country.languages || {}).join(', ')}</h4>
+            <h4>জনসংখ্যা: ${formatCompactNumber(Country.population)}</h4>
+            <h4>টাইমজোন: ${Country.timezones.join(', ')}</h4>
+        </div>
+    `;
 
     const borderCodes = Country.borders || [];
     if (borderCodes.length === 0) {
